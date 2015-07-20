@@ -1,0 +1,17 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+  labels:
+      monitor: 'rennes-bike-monitor'
+
+rule_files:
+
+scrape_configs:
+  - job_name: 'rennes-bike'
+
+    scrape_interval: 5s
+    scrape_timeout: 10s
+
+    target_groups:
+      - targets: ['192.168.1.17:8080']
